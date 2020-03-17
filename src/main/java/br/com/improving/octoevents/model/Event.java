@@ -1,20 +1,27 @@
 package br.com.improving.octoevents.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="event",schema="public")
 public class Event {
-	Integer hook_id;
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	Long id;
+
+	Long hook_id;
 	String zen;
 	
-	Hook hook; 
+	//Hook hook;
 	
 	public Event() { }
 	
-	public Event(String zen, Integer hook_id) {
-		zen = this.zen;
-		hook_id = this.hook_id;
+	public Event(Long hook_id, String zen) {
+
+		this.hook_id = hook_id;
+		this.zen = zen;
 	}
-	
-	
-	
+		
 	public String getZen() {
 		return zen;
 	}
@@ -23,11 +30,11 @@ public class Event {
 		this.zen = zen;
 	}
 	
-	public void setHook_id(Integer hook_id) {
+	public void setHook_id(Long hook_id) {
 		this.hook_id = hook_id;
 	}
 	
-	public Integer getHook_id() {
+	public Long getHook_id() {
 		return hook_id;
 	}
 	

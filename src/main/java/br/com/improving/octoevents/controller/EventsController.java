@@ -16,12 +16,14 @@ public class EventsController {
 	private EventService eventservice;
 
 	@PostMapping("/createEvent")
-	public ResponseEntity<String> insertEventsOnDatabase(@RequestBody Event obj) {
+	public ResponseEntity<String> insertEventsOnDatabase(@RequestBody Event event) {
 
-		JSONObject jsonObject = new JSONObject(obj);
-		System.out.println(jsonObject);
 
-		eventservice.insert(obj);
+	Event newEvent = new Event();
+	newEvent.setZen(event.getZen());
+	newEvent.setHook_id(event.getHook_id());
+
+	eventservice.insert(newEvent);
 
 		return ResponseEntity.status(HttpStatus.OK).body("vamos lá man");
 	}
@@ -39,7 +41,7 @@ public class EventsController {
 
 	@PostMapping("/get")
 	public ResponseEntity<String> getTest(@RequestBody Event obj) {
-		System.out.println();
+		System.out.println(obj.getHook_id()+obj.getZen());
 
 		return ResponseEntity.status(HttpStatus.OK).body("vamos lá man");
 	}
