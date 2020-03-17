@@ -4,6 +4,7 @@ public class Event {
 
 	String zen;
 	Integer hook_id;
+	Hook hook; 
 	
 	public Event() {
 		
@@ -15,5 +16,9 @@ public class Event {
 	
 	public Integer getHook_id() {
 		return hook_id;
+	}
+	
+	public Hook getHook() {
+		return hook;
 	}
 }

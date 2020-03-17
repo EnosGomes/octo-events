@@ -17,7 +17,7 @@ public class EventsController {
 		
 		JSONObject jsonObject = new JSONObject(obj);
 		System.out.println(jsonObject);
-		return ResponseEntity.status(HttpStatus.OK).body("Tudo certo aqui mano");
+		return ResponseEntity.status(HttpStatus.OK).body("vamos lá man");
 	}
 
 }
