@@ -23,8 +23,8 @@ public class Event {
 		this.zen = zen;
 	}
 	
-	public void setHook_id(Integer id) {
-		this.hook_id = id;
+	public void setHook_id(Integer hook_id) {
+		this.hook_id = hook_id;
 	}
 	
 	public Integer getHook_id() {

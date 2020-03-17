@@ -20,9 +20,9 @@ public class EventsController {
 
 		JSONObject jsonObject = new JSONObject(obj);
 		System.out.println(jsonObject);
-		
+
 		eventservice.insert(obj);
-		
+
 		return ResponseEntity.status(HttpStatus.OK).body("vamos lá man");
 	}
 
@@ -32,11 +32,11 @@ public class EventsController {
 		JSONObject jsonObject = new JSONObject(obj);
 		System.out.println(jsonObject);
 
-		
+
 
 		return ResponseEntity.status(HttpStatus.OK).body("vamos lá man");
 	}
-	
+
 	@PostMapping("/get")
 	public ResponseEntity<String> getTest(@RequestBody Event obj) {
 		System.out.println();
